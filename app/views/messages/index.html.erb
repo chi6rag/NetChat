@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="container-fluid">
+    <%= form_for(@message, class: 'form-inline') do |f| %>
+        <div class="form-group col-md-2" id="author-name">
+          <%= f.text_field :author, class: 'form-control', placeholder: 'Name' %>
+        </div>
+        <div class="form-group col-md-10" id="message">
+          <%= f.text_field :message, class: 'form-control', placeholder: 'Please enter your message' %>
+        </div>
+        <%= f.submit "Send", class: 'btn btn-defult hidden' %>
+    <% end %>
+  </div>
+    <div class="container all-messages">
+      <%= render partial: 'message', collection: @messages %>
+    </div>
+</div>
+
